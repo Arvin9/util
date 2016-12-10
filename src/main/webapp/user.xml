@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <users>
+        <user>
+            <method>add</method>
+            <key>1</key>
+            <code>11</code>
+            <name>张三</name>
+            <sex>0</sex>
+            <age>22</age>
+            <position>1</position>
+        </user>
+        <user>
+            <method>update</method>
+            <key>2</key>
+            <code>21</code>
+            <name>张三</name>
+            <sex>0</sex>
+            <age>22</age>
+            <position>1</position>
+        </user>
+        <user>
+            <method>delete</method>
+            <key>3</key>
+        </user>
+    </users>
+</root>
