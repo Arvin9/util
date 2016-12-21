@@ -2,7 +2,7 @@ package site.nebulas.util;
 
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
-
+import org.apache.log4j.Logger;
 
 /**
  * 邮件发送工具实现类
@@ -11,6 +11,8 @@ import org.apache.commons.mail.HtmlEmail;
  * @create 2016/4/24
  */
 public class MailUtil {
+	private static Logger log = Logger.getLogger(MailUtil.class);
+
 	private static final long serialVersionUID = 1L;
 	public static final String ENCODEING = "UTF-8";
 	private String host; // 服务器地址
@@ -22,21 +24,19 @@ public class MailUtil {
 	private String subject; // 主题
 	private String message; // 信息(支持HTML)
 
-
-
 	public static void main(String[] args) {
-		MailUtil.send("hello");
+		MailUtil.send("XGMM");
 	}
 	public static boolean send(String message) {
 		// 发送email
 		//设置mail信息
 		MailUtil mail = new MailUtil();
 
-		mail.setHost("smtp.163.com"); // 设置邮件服务器
-		mail.setSender("arvin_fj@163.com");
+		mail.setHost("smtp.sina.com"); // 设置邮件服务器smtp.163.com
+		mail.setSender("message_nebula@sina.com");
 		mail.setReceiver("594113869@qq.com"); // 接收人
-		mail.setUsername("arvin_fj@163.com"); // 登录账号,一般都是和邮箱名一样吧
-		mail.setPassword("flxpdkbukjonbbah"); // 发件人邮箱的登录密码
+		mail.setUsername("message_nebula@sina.com"); // 登录账号,一般都是和邮箱名一样吧 arvin_fj@163.com
+		mail.setPassword("CHh31416"); // 发件人邮箱的登录密码flxpdkbukjonbbah
 		mail.setSubject("Contact");//邮件主题
 		mail.setMessage(message);
 		
@@ -59,6 +59,7 @@ public class MailUtil {
 			email.setMsg(mail.getMessage());
 			// 发送
 			email.send();
+			log.info("send email success!");
 			return true;
 		} catch (EmailException e) {
 			e.printStackTrace();
