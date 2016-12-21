@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baidu</title>
+</head>
+<body>
+<input type="text" id="content" value=""/><input type="button" onclick="baidu()" value="搜索">
+
+<script type="text/javascript">
+    function baidu(){
+        var content=document.getElementById("content").value;
+        window.location.href="https://www.baidu.com/s?wd="+content;
+    }
+</script>
+</body>
+</html>
